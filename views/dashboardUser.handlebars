@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Page</title>
+
+               	<script>
+			$("document").ready(function(){
+				$('#enterName').hide();
+			    $('#enterRank').hide();
+				
+                
+				
+				$("#dd1").change(function(){
+                    var value = $("#dd1").val();
+                    if(value == "value1")
+                    {
+                        $("#enterName").show();
+                        $('#enterRank').hide();
+                    }
+                  
+                    else
+                    {
+                      $("#enterName").hide();
+                        $('#enterRank').show();
+                    }
+                })
+			
+        
+			})
+		</script>
+    </head>
+
+<body>
+
+<div class="dropdown">
+                    <select name="dropdown" id="dd1">
+                    <option value="value1" id="add">Do you want information about any company?</option>
+                    <option value="value2">Do you want to see the idea category rankings?</option>
+
+                    </select>
+                </div>
+
+
+    <div id="enterName">
+        <form method = "post" action = "/dashboardUser" >
+                <div class = "form-group">
+                    <label>Company Name</label>
+                    <input type = "text" name = "companyName" placeholder="Enter the company name"  class = "form-control">
+                    
+                </div>
+
+
+    
+                <button type = "submit" class = "btn btn-primary" id="enterButton">Enter!</button>
+        </form>
+        </div>
+
+
+<div id="enterRank">
+        <form method = "post" action = "/userRank" >
+                <div class = "form-group">
+                    <label>Enter the number of companies to be displayed:</label>
+                    <input type = "text" name = "numberCompany" placeholder="Enter the number of companies"  class = "form-control">
+                  
+                   
+
+                    
+                <button type = "submit" class = "btn btn-primary" id="enterButton1">Enter!</button>
+        </form>
+                </div>
+
+
+ 
+</body>
+</html>

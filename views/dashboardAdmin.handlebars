@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Page</title>
+
+
+
+        	<script>
+			$("document").ready(function(){
+				$('#addForm').hide();
+			    $('#removeForm').hide();
+				$('#updateForm').hide();
+
+				
+				
+				$("#dd").change(function(){
+                    var value = $("#dd").val();
+                    if(value == "Add")
+                    {
+                        $("#addForm").show();
+                        $('#removeForm').hide();
+				        $('#updateForm').hide();
+                    }
+                    else if(value == "Remove")
+                    {
+                        $("#removeForm").show();
+                        $('#addForm').hide();
+		        	    $('#updateForm').hide();
+                    }
+                    else
+                    {
+                        $("#updateForm").show();
+                        $('#removeForm').hide();
+			        	$('#addForm').hide();
+                    }
+                })
+			
+        
+			})
+		</script>
+    </head>
+
+
+<body>
+
+
+     <div class="dropdown">
+                    <select name="dropdown" id="dd">
+                    <option value="Add" id="add">Add</option>
+                    <option value="Remove">Remove</option>
+                    <option value="Update">Update</option>
+
+                    </select>
+                </div>
+<div id="addForm">
+        <form method = "post" action = "/dashboardAdmin" >
+                <div class = "form-group">
+                    <label>Name:</label>
+                    <input type = "text" name = "name" placeholder="name"  class = "form-control">
+                    <label>Number of Employees:</label>
+                    <input type = "text" name = "num_employees" placeholder="Number of employees"  class = "form-control">
+                    <label>Contact Email:</label>
+                    <input type = "text" name = "contact_email" placeholder="email ID"  class = "form-control">
+                    <label>Year Founded:</label>
+                    <input type = "text" name = "year_founded" placeholder="year"  class = "form-control">
+                    <label>Contact Name</label>
+                    <input type = "text" name = "contact_name" placeholder="Contact Name"  class = "form-control">
+                    <label>Financial Rank</label>
+                    <input type = "text" name = "financials" placeholder="Financial rank"  class = "form-control">
+                    <label>Team Rank</label>
+                    <input type = "text" name = "team" placeholder="Team Rank"  class = "form-control">
+                    <label>Idea Rank</label>
+                    <input type = "text" name = "idea" placeholder="Idea Rank"  class = "form-control">
+                
+                </div>
+                <button type = "submit" class = "btn btn-primary" id="addButton">Add</button>
+        </form>
+        </div>
+
+<div id="removeForm">
+
+         <form method = "post" action = "/removeData" >
+                <div class = "form-group">
+                    <label>Name</label>
+                    <input type = "text" name = "name1" placeholder="name"  class = "form-control">
+                    <style>
+
+                </style>
+                </div>
+                <button type = "submit" class = "btn btn-primary"  id="removeButton">Remove</button>
+        </form>
+</div>
+
+
+<div id="updateForm">
+
+         <form method = "post" action = "/updated" id="updateForm">
+
+                <div class = "form-group">
+                    <label>Name:</label>
+                    <input type = "text" name = "name" placeholder="name"  class = "form-control">
+                    <label>Updated Name:</label>
+                    <input type = "text" name = "updatedName" placeholder="name"  class = "form-control">
+                    <label>Updated Number of Employees:</label>
+                    <input type = "text" name = "updated_num_employees" placeholder="Number of employees"  class = "form-control">
+                    <label>Updated Contact Email:</label>
+                    <input type = "text" name = "updated_contact_email" placeholder="email ID"  class = "form-control">
+                    <label>Updated Year Founded:</label>
+                    <input type = "text" name = "updated_year_founded" placeholder="year"  class = "form-control">
+                    <label>Updated Contact Name</label>
+                    <input type = "text" name = "updated_contact_name" placeholder="Contact Name"  class = "form-control">
+                    <label>Updated Financial Rank</label>
+                    <input type = "text" name = "updated_financials" placeholder="Financial rank"  class = "form-control">
+                    <label>Updated Team Rank</label>
+                    <input type = "text" name = "updated_team" placeholder="Team Rank"  class = "form-control">
+                    <label>Updated Idea Rank</label>
+                    <input type = "text" name = "updated_idea" placeholder="Idea Rank"  class = "form-control">
+                
+                </div>
+                
+
+                
+                <button type = "submit" class = "btn btn-primary"  id="updateButton">Update</button>
+        </form>
+
+
+
+                        </div>
+<div id="display">
+
+
+
+.
+
+
+</div>
+
+<script src="/js/getscripts.js"></script>
+
+</body>
+</html>
